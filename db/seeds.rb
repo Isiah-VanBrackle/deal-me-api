@@ -5,9 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+DeckCard.destroy_all
 Deck.destroy_all
 Card.destroy_all
 
+deck_test = Deck.create!
 
 Card.create(suite: 'spades', card_type: 'ace', image: '')
 Card.create(suite: 'spades', card_type: '2', image: '')
@@ -61,3 +63,7 @@ Card.create(suite: 'clubs', card_type: '10', image: '')
 Card.create(suite: 'clubs', card_type: 'jack', image: '')
 Card.create(suite: 'clubs', card_type: 'queen', image: '')
 Card.create(suite: 'clubs', card_type: 'king', image: '')
+
+Card.all.shuffle.each do |card|
+  deck_test.cards << card
+end
