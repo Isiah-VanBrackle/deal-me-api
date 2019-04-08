@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_074950) do
   end
 
   create_table "decks", force: :cascade do |t|
+    t.integer "begin", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

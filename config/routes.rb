@@ -4,8 +4,8 @@ Rails.application.routes.draw do
       resources :decks do
         resources :cards
       end
-      get "/decks/new", to: "decks#show"
-      get "/decks/:id", to: "decks#show"
+      post "/decks/new", to: "decks#create"
+      put "/decks/:id/deal", to: "decks#update"
     end
   end
   #this closes Rails.application.routes.draw do

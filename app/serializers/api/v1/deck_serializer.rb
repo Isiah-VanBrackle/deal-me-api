@@ -1,3 +1,3 @@
 class Api::V1::DeckSerializer < ActiveModel::Serializer
-  attributes :id, :cards
+  attributes :id, :cards, :deal, :begin 
 end
